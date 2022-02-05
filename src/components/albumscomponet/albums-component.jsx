@@ -11,6 +11,20 @@ const  AlbumsList =  ({albumsdata,fetchalbums}) => {
      useEffect(()=>{
           fetchalbums()
      },[])
+
+     const filteredalbums = (photos) => {
+          return (
+          photos.filter(photo =>( photo.id <=5))
+          )
+        }
+        var test = filteredalbums(albumsdata.albums)
+        const test2 = (test) => {
+          return (
+           test.filter(photo => photo.title.includes(albumsdata.searchField))
+          )
+        }
+        var test3 = test2(test)
+
      return albumsdata.loading ? (
           <h2>Loading</h2>
      ) : albumsdata.error ? (
@@ -27,9 +41,9 @@ const  AlbumsList =  ({albumsdata,fetchalbums}) => {
                          
                          
                     
-                         albumsdata.albums.map((album) => { 
+                         test3.map((album) => { 
                               return (
-                                   album.id <=5 &&
+                                   
                                    <Photorender key = {album.id} title = {album.title} myid = {album.id} />  
                                    
 
@@ -51,7 +65,9 @@ const  AlbumsList =  ({albumsdata,fetchalbums}) => {
 
 const mapStateToProps = state => {
      return {
-         albumsdata: state.album
+         albumsdata: state.album,
+         
+        
      }
    }
    

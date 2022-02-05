@@ -1,10 +1,13 @@
 import { FETCH_albums_FAILURE } from "./albumstypes";
 import { FETCH_albums_REQUEST } from "./albumstypes";
 import { FETCH_albums_SUCCESS } from "./albumstypes";
+import { ON_SEARCH_CHANGE } from "../photos/photostypes";
 const INITIAL_STATE =  {
      loading: false,
      albums: [],
-     error: ''
+     error: '',
+     searchField: ''
+
 }
 
 const albumsReducer = (state = INITIAL_STATE,action) => {
@@ -27,6 +30,11 @@ const albumsReducer = (state = INITIAL_STATE,action) => {
                 albums: [],
                 error: action.payload
             }
+            case ON_SEARCH_CHANGE:
+                return {
+                    ...state,
+                    searchField: action.payload
+                }
         default: return state    
 
     }

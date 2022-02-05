@@ -2,6 +2,7 @@ import axios from 'axios';
 import { FETCH_albums_FAILURE } from "./albumstypes";
 import { FETCH_albums_REQUEST } from "./albumstypes";
 import { FETCH_albums_SUCCESS } from "./albumstypes";
+import { onSearchChange } from '../photos/photosactions';
 
 export const fetchalbumsRequest = () => {
     return {
@@ -32,6 +33,7 @@ export const fetchalbums = () => {
         .then(response => {
             const albums = response.data
             dispatch(fetchalbumsSuccess(albums));
+            dispatch(onSearchChange(" "));
         })
         .catch(err => {
             const errmsg = err.message

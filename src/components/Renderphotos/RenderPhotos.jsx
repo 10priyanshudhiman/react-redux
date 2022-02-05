@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {fetchphotos} from '../../redux/photos/photosactions';
-import './photos.css';
+
 
 const Photorender = ({fetchphotos,photosdata,title,myid}) => {
     
@@ -47,7 +47,7 @@ const Photorender = ({fetchphotos,photosdata,title,myid}) => {
                            <div>
                                
                                
-                               <h5 class ="h"> {title}</h5>
+                               <h5 class ="h">{title}</h5>
      
                                <div>
                                
@@ -66,7 +66,7 @@ const Photorender = ({fetchphotos,photosdata,title,myid}) => {
       
       
       
-  <a href="#"><p class = "data1">{test.url}</p></a>
+  <a href={test.url}><p class = "data1">{test.url}</p></a>
     
     
     
