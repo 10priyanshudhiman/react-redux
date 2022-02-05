@@ -18,12 +18,8 @@ const  AlbumsList =  ({albumsdata,fetchalbums}) => {
           )
         }
         var test = filteredalbums(albumsdata.albums)
-        const test2 = (test) => {
-          return (
-           test.filter(photo => photo.title.includes(albumsdata.searchField))
-          )
-        }
-        var test3 = test2(test)
+        
+       
 
      return albumsdata.loading ? (
           <h2>Loading</h2>
@@ -40,11 +36,11 @@ const  AlbumsList =  ({albumsdata,fetchalbums}) => {
 
                          
                          
-                    
-                         test3.map((album) => { 
+                          
+                         test.map((album) => { 
                               return (
                                    
-                                   <Photorender key = {album.id} title = {album.title} myid = {album.id} />  
+                                   <Photorender key = {album.id} title = {album.title} myid = {album.id}  />  
                                    
 
                               );

@@ -28,6 +28,7 @@ const Photorender = ({fetchphotos,photosdata,title,myid}) => {
    var test3 = test2(test)
    
    var num = Math.floor((Math.random() * 250) + 1)
+
    
 
     return (
@@ -47,7 +48,7 @@ const Photorender = ({fetchphotos,photosdata,title,myid}) => {
                            <div>
                                
                                
-                               <h5 class ="h">{title}</h5>
+                               {test3.length == 0 ? " ": <h5 class = "h">{title}</h5>}
      
                                <div>
                                
