@@ -1,7 +1,11 @@
 .App {
   text-align: center;
+  margin-left: 7%;
+  margin-right: 7%;
 }
-
+.card {
+  height: 200px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
